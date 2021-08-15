@@ -1,5 +1,7 @@
 package twentyOnes.studyshare.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,7 @@ import twentyOnes.studyshare.service.MemberService;
 import javax.validation.Valid;
 
 @RestController
+@Api(tags = {"Member API"})
 public class MemberController {
     private final MemberService memberService;
 
@@ -27,7 +30,8 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @PostMapping("/signup")
+    @PostMapping("/join")
+    @ApiOperation(value = "회원가입", notes = "회원가입을 위한 API")
     public ResponseEntity<Member> signup(
             @Valid @RequestBody MemberDto memberDto
     ) {

@@ -19,7 +19,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.twentyOnes.studyshare"))
+                .apis(RequestHandlerSelectors.basePackage("twentyOnes.studyshare"))
                 .paths(PathSelectors.any())
                 .build();
     }

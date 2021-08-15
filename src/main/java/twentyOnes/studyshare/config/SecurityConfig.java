@@ -51,6 +51,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/h2-console/**"
                         , "/favicon.ico"
                         , "/error"
+                        , "/v2/api-docs"
+                        , "/swagger-resources/**"
+                        , "/swagger-ui.html/**"
+                        , "/webjars/**"
                 );
     }
 
@@ -79,9 +83,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .authorizeRequests()
-                .antMatchers("/hello").permitAll()
                 .antMatchers("/authenticate").permitAll()
-                .antMatchers("/signup").permitAll()
+                .antMatchers("/join").permitAll()
 
                 .anyRequest().authenticated()
 
