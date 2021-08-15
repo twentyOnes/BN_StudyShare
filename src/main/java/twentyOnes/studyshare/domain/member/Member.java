@@ -1,17 +1,14 @@
-package com.studyshare.domain.member;
+package twentyOnes.studyshare.domain.member;
 
-import com.studyshare.domain.childcomment.ChildComment;
-import com.studyshare.domain.Like;
-import com.studyshare.domain.todaycomment.TodayComment;
+import twentyOnes.studyshare.domain.childcomment.ChildComment;
+import twentyOnes.studyshare.domain.Like;
+import twentyOnes.studyshare.domain.todaycomment.TodayComment;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @AllArgsConstructor

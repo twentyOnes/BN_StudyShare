@@ -1,4 +1,4 @@
-package com.studyshare.domain;
+package twentyOnes.studyshare.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

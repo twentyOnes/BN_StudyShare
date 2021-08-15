@@ -1,4 +1,4 @@
-package com.studyshare;
+package twentyOnes.studyshare;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

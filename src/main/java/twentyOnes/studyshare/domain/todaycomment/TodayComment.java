@@ -1,13 +1,12 @@
-package com.studyshare.domain.todaycomment;
+package twentyOnes.studyshare.domain.todaycomment;
 
-import com.studyshare.domain.member.Member;
+import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor

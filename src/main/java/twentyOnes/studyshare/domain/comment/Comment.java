@@ -1,7 +1,7 @@
-package com.studyshare.domain.comment;
+package twentyOnes.studyshare.domain.comment;
 
-import com.studyshare.domain.posts.Post;
-import com.studyshare.domain.member.Member;
+import twentyOnes.studyshare.domain.posts.Post;
+import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

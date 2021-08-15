@@ -1,6 +1,6 @@
-package com.studyshare.domain.posts;
+package twentyOnes.studyshare.domain.posts;
 
-import com.studyshare.domain.Like;
+import twentyOnes.studyshare.domain.Like;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package com.studyshare.follow;
+package twentyOnes.studyshare.follow;
 
-import com.studyshare.domain.member.Member;
+import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

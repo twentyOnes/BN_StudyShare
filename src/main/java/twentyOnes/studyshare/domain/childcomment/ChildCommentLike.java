@@ -1,6 +1,6 @@
-package com.studyshare.domain.childcomment;
+package twentyOnes.studyshare.domain.childcomment;
 
-import com.studyshare.domain.Like;
+import twentyOnes.studyshare.domain.Like;
 
 import javax.persistence.*;
 

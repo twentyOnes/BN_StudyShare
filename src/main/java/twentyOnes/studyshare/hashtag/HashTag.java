@@ -1,7 +1,7 @@
-package com.studyshare.hashtag;
+package twentyOnes.studyshare.hashtag;
 
 
-import com.studyshare.domain.posts.Post;
+import twentyOnes.studyshare.domain.posts.Post;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
