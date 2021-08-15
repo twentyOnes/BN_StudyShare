@@ -1,5 +1,9 @@
 package twentyOnes.studyshare.domain.member;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Builder;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import twentyOnes.studyshare.domain.childcomment.ChildComment;
 import twentyOnes.studyshare.domain.childcomment.ChildCommentLike;
 import twentyOnes.studyshare.domain.comment.CommentLike;
@@ -12,8 +16,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -21,10 +28,12 @@ import java.util.List;
 public class Member {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id", length = 50)
     private Long memberId;
 
-    private String id;
+    @Column(name = "username")
+    private String username;
 
     private String password;
 
@@ -41,6 +50,17 @@ public class Member {
 
     @Column(name = "followee_count")
     private int followeeCount;
+
+    @JsonIgnore
+    @Column(name = "activated")
+    private boolean activated;
+
+    @ManyToMany
+    @JoinTable(
+            name = "member_authority",
+            joinColumns = {@JoinColumn(name = "member_id", referencedColumnName = "member_id")},
+            inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")})
+    private Set<Authority> authorities;
 
     @OneToMany(mappedBy = "followerId", cascade = CascadeType.ALL)
     List<Follow> followerList = new ArrayList<>();
