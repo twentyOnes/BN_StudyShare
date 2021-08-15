@@ -21,6 +21,6 @@ spring:
 
 logging:
   level:
-    com.studyshare: DEBUG
+    twentyOnes.studyshare: DEBUG
 
 spring.jpa.defer-datasource-initialization: true

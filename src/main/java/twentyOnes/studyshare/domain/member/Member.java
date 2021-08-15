@@ -1,7 +1,10 @@
 package twentyOnes.studyshare.domain.member;
 
 import twentyOnes.studyshare.domain.childcomment.ChildComment;
-import twentyOnes.studyshare.domain.Like;
+import twentyOnes.studyshare.domain.childcomment.ChildCommentLike;
+import twentyOnes.studyshare.domain.comment.CommentLike;
+import twentyOnes.studyshare.domain.follw.Follow;
+import twentyOnes.studyshare.domain.posts.PostLike;
 import twentyOnes.studyshare.domain.todaycomment.TodayComment;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -39,12 +42,24 @@ public class Member {
     @Column(name = "followee_count")
     private int followeeCount;
 
+    @OneToMany(mappedBy = "followerId", cascade = CascadeType.ALL)
+    List<Follow> followerList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "followeeId", cascade = CascadeType.ALL)
+    List<Follow> followeeList = new ArrayList<>();
+
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     List<ChildComment> childCommentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    List<Like> likeList = new ArrayList<>();
+    List<TodayComment> todayCommentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    List<TodayComment> todayCommentList = new ArrayList<>();
+    List<ChildCommentLike> childCommentLike = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    List<CommentLike> commentLike = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    List<PostLike> postLike = new ArrayList<>();
 }

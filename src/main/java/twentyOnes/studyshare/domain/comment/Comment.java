@@ -38,6 +38,6 @@ public class Comment {
     @Column(name = "like_count")
     private int likeCount;
 
-    @OneToMany(mappedBy = "commentId", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL)
     private List<CommentLike> commentLikeList = new ArrayList<>();
 }

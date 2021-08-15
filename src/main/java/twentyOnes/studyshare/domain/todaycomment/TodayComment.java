@@ -21,7 +21,7 @@ public class TodayComment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private Member memberId;
+    private Member member;
 
     @Column(name = "today_comment_title")
     private String todayCommentTitle;

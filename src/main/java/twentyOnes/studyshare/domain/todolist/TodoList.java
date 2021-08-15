@@ -21,7 +21,7 @@ public class TodoList {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private Member memberId;
+    private Member member;
 
     @Column(name = "todo_subject")
     private String todoSubject;

@@ -28,7 +28,7 @@ public class ChildComment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private Member memberId;
+    private Member member;
 
     @Column(name = "childcom_text")
     private String childComText;
