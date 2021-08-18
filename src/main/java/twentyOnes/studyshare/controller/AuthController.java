@@ -19,7 +19,6 @@ import twentyOnes.studyshare.jwt.TokenProvider;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api")
 public class AuthController {
     private final TokenProvider tokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;

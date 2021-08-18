@@ -26,9 +26,9 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("studyshare Spring Boot REST API")
+                .title("studyshare REST API")
                 .version("1.0.0")
-                .description("All API")
+                .description("studyshare에서 사용되는 API 리스트입니다.")
                 .build();
     }
 }

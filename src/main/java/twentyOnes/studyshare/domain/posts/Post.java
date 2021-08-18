@@ -2,6 +2,7 @@ package twentyOnes.studyshare.domain.posts;
 
 import twentyOnes.studyshare.domain.comment.Comment;
 import twentyOnes.studyshare.domain.hashtag.Tag;
+import twentyOnes.studyshare.domain.hashtag.TagPost;
 import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,5 +43,5 @@ public class Post {
     private List<Comment> commentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
-    private List<Tag> hashTagList = new ArrayList<>();
+    private List<TagPost> tagPostList = new ArrayList<>();
 }

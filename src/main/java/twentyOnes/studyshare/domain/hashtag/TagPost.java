@@ -6,22 +6,23 @@ import lombok.NoArgsConstructor;
 import twentyOnes.studyshare.domain.posts.Post;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Tag {
+public class TagPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tag_id")
-    private Long tagId;
+    @Column(name = "tag_post_id")
+    private Long tagPostId;
 
-    @OneToMany(mappedBy = "tag", cascade = CascadeType.ALL)
-    private List<TagPost> tagPostList = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tag_id")
+    private Tag tag;
 
-    private String tagName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
 }
