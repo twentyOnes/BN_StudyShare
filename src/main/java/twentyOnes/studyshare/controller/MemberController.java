@@ -40,6 +40,7 @@ public class MemberController {
 
     @GetMapping("/member")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
+    @ApiOperation(value = "회원조회", notes = "회원정보 조회를 위한 API")
     public ResponseEntity<Member> getMyUserInfo() {
         return ResponseEntity.ok(memberService.getMyUserWithAuthorities().get());
     }
