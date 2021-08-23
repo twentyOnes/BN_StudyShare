@@ -15,6 +15,6 @@ import java.util.List;
 public class TokenDto {
 
     private String token;
-    private List<Post> postLists = new ArrayList<>();
-    private List<TodoList> todoLists = new ArrayList<>();
+//    private List<Post> postLists = new ArrayList<>();
+//    private List<TodoList> todoLists = new ArrayList<>();
 }

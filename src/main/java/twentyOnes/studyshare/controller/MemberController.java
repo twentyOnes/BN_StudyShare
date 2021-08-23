@@ -40,13 +40,14 @@ public class MemberController {
 
     @GetMapping("/member")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
-    @ApiOperation(value = "회원조회", notes = "회원정보 조회를 위한 API")
+    @ApiOperation(value = "회원 본인 조회", notes = "회원 본인 정보 조회를 위한 API")
     public ResponseEntity<Member> getMyUserInfo() {
         return ResponseEntity.ok(memberService.getMyUserWithAuthorities().get());
     }
 
     @GetMapping("/member/{username}")
     @PreAuthorize("hasAnyRole('ADMIN')")
+    @ApiOperation(value = "원하는 회원조회", notes = "원하는 회원 정보 조회를 위한 API")
     public ResponseEntity<Member> getUserInfo(@PathVariable String username) {
         return ResponseEntity.ok(memberService.getUserWithAuthorities(username).get());
     }

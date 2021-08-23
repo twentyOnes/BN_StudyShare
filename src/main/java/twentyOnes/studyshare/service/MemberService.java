@@ -34,10 +34,6 @@ public class MemberService {
 
     @Transactional
     public Member signup(MemberDto memberDto) {
-        if (memberRepository.findOneWithAuthoritiesByUsername(memberDto.getUsername()).orElse(null) != null) {
-            throw new RuntimeException("이미 가입되어 있는 유저입니다.");
-        }
-
         //빌더 패턴의 장점
         Authority authority = Authority.builder()
                 .authorityName("ROLE_USER")
@@ -52,6 +48,33 @@ public class MemberService {
                 .build();
 
         return memberRepository.save(member);
+    }
+
+    @Transactional
+    public Boolean idVerification(String username) {
+        if (memberRepository.findOneWithAuthoritiesByUsername(username).orElse(null) != null) {
+            return false;
+        }
+        else
+            return true;
+    }
+
+    @Transactional
+    public Boolean nicknameVerification(String nickname) {
+        if (memberRepository.findOneWithAuthoritiesByUsername(nickname).orElse(null) != null) {
+            return false;
+        }
+        else
+            return true;
+    }
+
+    @Transactional
+    public Boolean emailVerification(String email) {
+        if (memberRepository.findOneWithAuthoritiesByUsername(email).orElse(null) != null) {
+            return false;
+        }
+        else
+            return true;
     }
 
     @Transactional(readOnly = true)
