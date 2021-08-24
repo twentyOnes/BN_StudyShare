@@ -30,6 +30,11 @@ public class MemberController {
         this.memberService = memberService;
     }
 
+    @GetMapping("/hello")
+    public String hello () {
+        return "hello";
+    }
+
     @PostMapping("/join")
     @ApiOperation(value = "회원가입", notes = "회원가입을 위한 API")
     public ResponseEntity<Member> signup(
