@@ -1,9 +1,9 @@
 spring:
-  init:
-    mode: always
-  h2:
-    console:
-      enabled: true
+#  init:
+#    mode: always
+#  h2:
+#    console:
+#      enabled: true
 
   datasource:
     url: jdbc:mariadb://database-1.c62snh2lrenz.ap-northeast-2.rds.amazonaws.com:3306/studyshare
@@ -18,9 +18,10 @@ spring:
 #    password:
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+#    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
