@@ -8,7 +8,6 @@ import twentyOnes.studyshare.dto.posts.PostUpdateRequestDto;
 import twentyOnes.studyshare.service.PostService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @Api(tags = {"Post API"})
