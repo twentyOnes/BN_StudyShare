@@ -1,5 +1,6 @@
 package twentyOnes.studyshare.domain.comment;
 
+import lombok.Builder;
 import twentyOnes.studyshare.domain.posts.Post;
 import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
@@ -30,7 +31,7 @@ public class Comment {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @Column(name = "commnet_text")
+    @Column(name = "comment_text")
     private String commentText;
 
     private LocalDateTime created;
@@ -40,4 +41,19 @@ public class Comment {
 
     @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL)
     private List<CommentLike> commentLikeList = new ArrayList<>();
+
+    @Builder
+    public Comment (Post post, Member member, String commentText, LocalDateTime created, Integer likeCount)
+    {
+        this.post = post;
+        this.member = member;
+        this.commentText = commentText;
+        this.created = created;
+        this.likeCount = likeCount;
+    }
+    public Comment updatecomment(String comment)
+    {
+        this.commentText = comment;
+        return this;
+    }
 }
