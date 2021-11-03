@@ -2,8 +2,11 @@ package twentyOnes.studyshare.controller;
 
 import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+import twentyOnes.studyshare.domain.member.Member;
 import twentyOnes.studyshare.domain.posts.Post;
+import twentyOnes.studyshare.dto.posts.PostSaveRequestDto;
 import twentyOnes.studyshare.dto.posts.PostUpdateRequestDto;
 import twentyOnes.studyshare.service.PostService;
 
@@ -26,6 +29,12 @@ public class PostController {
     @GetMapping("/posts/{id}")
     public ResponseEntity<Post> detail(@PathVariable Long id) {
         return ResponseEntity.ok(postService.detail(id));
+    }
+
+    @PostMapping("/api/v1/posts")
+    public ResponseEntity<Long> save(@RequestBody PostSaveRequestDto postSaveRequestDto,
+                     @AuthenticationPrincipal Member member) {
+        return ResponseEntity.ok(postService.save(postSaveRequestDto, member));
     }
 
     @PutMapping("/api/v1/posts/{id}")

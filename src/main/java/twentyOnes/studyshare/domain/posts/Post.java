@@ -1,5 +1,8 @@
 package twentyOnes.studyshare.domain.posts;
 
+import lombok.Builder;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import twentyOnes.studyshare.domain.comment.Comment;
 import twentyOnes.studyshare.domain.hashtag.Tag;
 import twentyOnes.studyshare.domain.hashtag.TagPost;
@@ -9,9 +12,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Builder
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,6 +43,14 @@ public class Post {
 
     @Column(name = "comment_count")
     private int commentCount;
+
+    @Column(name = "create_date")
+    @CreatedDate
+    private LocalDateTime createdDate;
+
+    @Column(name = "modified_date")
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> commentList = new ArrayList<>();

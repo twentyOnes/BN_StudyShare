@@ -2,8 +2,10 @@ package twentyOnes.studyshare.serviceImpl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import twentyOnes.studyshare.domain.member.Member;
 import twentyOnes.studyshare.domain.posts.Post;
 import twentyOnes.studyshare.domain.posts.PostRepository;
+import twentyOnes.studyshare.dto.posts.PostSaveRequestDto;
 import twentyOnes.studyshare.dto.posts.PostUpdateRequestDto;
 
 import java.util.List;
@@ -30,6 +32,13 @@ public class PostServiceImpl implements PostService {
     public Post detail(Long id) {
         return this.postRepository.findById(id).orElseThrow(()
                 -> new IllegalArgumentException("해당 포스트가 없습니다. id" + id));
+    }
+
+    //게시물 생성
+    @Override
+    public Long save(PostSaveRequestDto postSaveRequestDto, Member member) {
+        postSaveRequestDto.setMember(member);
+        return postRepository.save(postSaveRequestDto.toEntity()).getPostId();
     }
 
     //게시물 업데이트
