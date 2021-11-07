@@ -2,10 +2,7 @@ package twentyOnes.studyshare.domain.member;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -15,6 +12,7 @@ import javax.persistence.Table;
 public class Authority {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "authority_name", length = 50)
     private String authorityName;
 }

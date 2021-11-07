@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import twentyOnes.studyshare.domain.childcomment.ChildComment;
-import twentyOnes.studyshare.domain.childcomment.ChildCommentLike;
-import twentyOnes.studyshare.domain.comment.CommentLike;
+//import twentyOnes.studyshare.domain.childcomment.ChildComment;
+//import twentyOnes.studyshare.domain.childcomment.ChildCommentLike;
+//import twentyOnes.studyshare.domain.comment.CommentLike;
 import twentyOnes.studyshare.domain.follw.Follow;
-import twentyOnes.studyshare.domain.posts.PostLike;
+//import twentyOnes.studyshare.domain.posts.PostLike;
 import twentyOnes.studyshare.domain.todaycomment.TodayComment;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -68,18 +68,18 @@ public class Member {
     @OneToMany(mappedBy = "followeeId", cascade = CascadeType.ALL)
     List<Follow> followeeList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    List<ChildComment> childCommentList = new ArrayList<>();
+//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+//    List<ChildComment> childCommentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     List<TodayComment> todayCommentList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    List<ChildCommentLike> childCommentLike = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    List<CommentLike> commentLike = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-    List<PostLike> postLike = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+//    List<ChildCommentLike> childCommentLike = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+//    List<CommentLike> commentLike = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+//    List<PostLike> postLike = new ArrayList<>();
 }
