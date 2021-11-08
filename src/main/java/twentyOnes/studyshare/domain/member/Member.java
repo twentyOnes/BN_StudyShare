@@ -2,12 +2,10 @@ package twentyOnes.studyshare.domain.member;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 //import twentyOnes.studyshare.domain.childcomment.ChildComment;
 //import twentyOnes.studyshare.domain.childcomment.ChildCommentLike;
 //import twentyOnes.studyshare.domain.comment.CommentLike;
-import twentyOnes.studyshare.domain.follw.Follow;
+import twentyOnes.studyshare.domain.follow.Follow;
 //import twentyOnes.studyshare.domain.posts.PostLike;
 import twentyOnes.studyshare.domain.todaycomment.TodayComment;
 import lombok.AllArgsConstructor;
@@ -16,7 +14,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 

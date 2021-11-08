@@ -44,4 +44,11 @@ public class Post {
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<TagPost> tagPostList = new ArrayList<>();
+
+    //update 메서드 추가
+    //JPA에서 update 진행 시 영속성 컨텍스트에 있는 값과 비교하여 변경된 값이 있으면 그 변경된 값만 update 시킨다.
+    // -> 더티 체킹 및 변경 감지
+    public void update(String postText) {
+        this.postText = postText;
+    }
 }

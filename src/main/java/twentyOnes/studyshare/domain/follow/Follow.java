@@ -1,4 +1,4 @@
-package twentyOnes.studyshare.domain.follw;
+package twentyOnes.studyshare.domain.follow;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
