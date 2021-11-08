@@ -1,5 +1,6 @@
 package twentyOnes.studyshare.domain.todaycomment;
 
+import lombok.Builder;
 import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Entity
+@Builder
 public class TodayComment {
 
     @Id
