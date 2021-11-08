@@ -1,5 +1,6 @@
 package twentyOnes.studyshare.domain.todolist;
 
+import lombok.Builder;
 import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -38,4 +39,13 @@ public class TodoList {
     @Enumerated(EnumType.STRING)
     private Achievement achievement;
 
+    @Builder
+    public TodoList(Member member, String todoSubject, String todoText, LocalDate localDate, String studyTime, Achievement achievement) {
+        this.member = member;
+        this.todoSubject = todoSubject;
+        this.todoText = todoText;
+        this.localDate = localDate;
+        this.studyTime = studyTime;
+        this.achievement = achievement;
+    }
 }
