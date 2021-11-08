@@ -1,7 +1,5 @@
 package twentyOnes.studyshare.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,15 +9,8 @@ import twentyOnes.studyshare.domain.member.MemberRepository;
 import twentyOnes.studyshare.dto.member.MemberDto;
 import twentyOnes.studyshare.util.SecurityUtil;
 
-import javax.validation.ConstraintViolationException;
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 @Service
 public class MemberService {
