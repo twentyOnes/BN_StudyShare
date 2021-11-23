@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Set;
 
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Entity

@@ -2,23 +2,25 @@ package twentyOnes.studyshare.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import twentyOnes.studyshare.domain.member.Member;
 import twentyOnes.studyshare.dto.member.MemberDto;
+import twentyOnes.studyshare.service.FollowService;
 import twentyOnes.studyshare.service.MemberService;
 
 import javax.validation.Valid;
 
 @RestController
+@RequiredArgsConstructor
 @Api(tags = {"Member API"})
 public class MemberController {
-    private final MemberService memberService;
 
-    public MemberController(MemberService memberService) {
-        this.memberService = memberService;
-    }
+    private final MemberService memberService;
+    private final FollowService followService;
 
     @GetMapping("/hello")
     public String hello () {
