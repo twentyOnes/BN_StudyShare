@@ -12,7 +12,6 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
-@Setter
 @NoArgsConstructor
 public class TodoListDto {
 
@@ -24,6 +23,10 @@ public class TodoListDto {
 
     @Enumerated(EnumType.STRING)
     private Achievement achievement;
+
+    public TodoListDto(LocalDate localDate) {
+        this.localDate = localDate;
+    }
 
     @Builder
     public TodoListDto(Member member, String todoSubject, String todoText, LocalDate localDate, String studyTime, Achievement achievement) {

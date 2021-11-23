@@ -10,7 +10,6 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Entity
 public class TodoList {

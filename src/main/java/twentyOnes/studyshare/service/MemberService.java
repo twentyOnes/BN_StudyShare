@@ -77,4 +77,9 @@ public class MemberService {
     public Optional<Member> getMyUserWithAuthorities() {
         return SecurityUtil.getCurrentUsername().flatMap(memberRepository::findOneWithAuthoritiesByUsername);
     }
+
+    @Transactional
+    public Optional<Member> getUserById(Long id) {
+        return memberRepository.findById(id);
+    }
 }
