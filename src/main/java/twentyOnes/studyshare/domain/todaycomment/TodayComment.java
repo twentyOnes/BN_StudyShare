@@ -5,15 +5,14 @@ import twentyOnes.studyshare.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import twentyOnes.studyshare.dto.todaycomment.TodayCommentDto;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Entity
-@Builder
 public class TodayComment {
 
     @Id
@@ -34,4 +33,15 @@ public class TodayComment {
     @Column(name = "today_datetime", columnDefinition = "TIMESTAMP")
     private LocalDate localDate;
 
+    public TodayComment(LocalDate localDate) {
+        this.localDate = localDate;
+    }
+
+    @Builder
+    public TodayComment(Member member, String todayCommentTitle, String todayCommentText, LocalDate localDate) {
+        this.member = member;
+        this.todayCommentTitle = todayCommentTitle;
+        this.todayCommentText = todayCommentText;
+        this.localDate = localDate;
+    }
 }

@@ -3,6 +3,7 @@ package twentyOnes.studyshare.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import twentyOnes.studyshare.domain.member.Member;
 import twentyOnes.studyshare.domain.todaycomment.TodayComment;
 import twentyOnes.studyshare.domain.todaycomment.TodayCommentRepository;
 import twentyOnes.studyshare.domain.todolist.TodoList;
@@ -15,7 +16,7 @@ import java.util.Optional;
 @Service
 public class TodayCommentService {
 
-    private TodayCommentRepository todayCommentRepository;
+    private final TodayCommentRepository todayCommentRepository;
 
     @Transactional
     public Long save(TodayCommentDto todayCommentDto) {
@@ -23,7 +24,12 @@ public class TodayCommentService {
     }
 
     @Transactional
-    public Optional<TodayComment> findByLocalDate(LocalDate localDate) {
-        return todayCommentRepository.findByLocalDate(localDate);
+    public Optional<TodayCommentDto> findByLocalDate(LocalDate localDate, Long memberId) {
+        return todayCommentRepository.findByLocalDateAndMember(localDate, memberId);
+    }
+
+    @Transactional
+    public Optional<TodayComment> findById(Long id) {
+        return todayCommentRepository.findById(id);
     }
 }

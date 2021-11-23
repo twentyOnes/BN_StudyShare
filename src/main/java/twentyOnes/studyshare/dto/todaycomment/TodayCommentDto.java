@@ -17,6 +17,10 @@ public class TodayCommentDto {
     private String todayCommentText;
     private LocalDate localDate;
 
+    public TodayCommentDto(LocalDate localDate) {
+        this.localDate = localDate;
+    }
+
     @Builder
     public TodayCommentDto(Member member, String todayCommentTitle, String todayCommentText, LocalDate localDate) {
         this.member = member;
